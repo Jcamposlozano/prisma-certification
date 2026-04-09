@@ -34,6 +34,7 @@ certificate_service = CertificateService(
 
 catalog_service = CatalogService(template_repository)
 
+router = APIRouter(prefix="/certifications")
 
 @router.get("/health")
 def health():
