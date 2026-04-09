@@ -35,6 +35,11 @@ certificate_service = CertificateService(
 catalog_service = CatalogService(template_repository)
 
 
+@router.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 @router.get("/v1/certificates/catalog", response_model=CertificatesCatalogResponse)
 def get_certificates_catalog():
     try:
