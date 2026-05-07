@@ -1,0 +1,71 @@
+<table cellpadding="0" cellspacing="0" border="0" width="560" role="presentation"
+       style="width:560px;min-width:560px;max-width:560px;border-collapse:collapse;border-spacing:0;table-layout:fixed;background-color:#010D26;">
+  <tr>
+    <td width="310" valign="top" style="width:310px;padding:0;margin:0;line-height:0;font-size:0;">
+      <img src="{{ img_background_left }}" width="310" height="160" alt="Westfield"
+           style="display:block;border:0;outline:none;text-decoration:none;width:310px;height:160px;">
+    </td>
+    <td width="250" valign="top" bgcolor="#010D26" background="{{ img_background_right }}"
+        style="width:250px;padding:0;margin:0;vertical-align:top;background-color:#010D26;background-image:url({{ img_background_right }});background-repeat:no-repeat;background-position:left top;background-size:250px 160px;">
+      <table cellpadding="0" cellspacing="0" border="0" width="250" role="presentation"
+             style="width:250px;border-collapse:collapse;border-spacing:0;table-layout:fixed;">
+        <tr>
+          <td width="16" style="width:16px;font-size:0;line-height:0;">&nbsp;</td>
+          <td width="220" valign="top" style="width:220px;padding:12px 0;vertical-align:top;">
+            <table cellpadding="0" cellspacing="0" border="0" width="220" role="presentation"
+                   style="width:220px;border-collapse:collapse;border-spacing:0;">
+              <tr><td style="padding:0 0 2px 0;">
+                <span style="font-family:Georgia,serif;font-size:14px;line-height:18px;font-weight:bold;color:#ffffff;white-space:nowrap;display:inline-block;">{{ name }}</span>
+              </td></tr>
+              <tr><td style="padding:0 0 7px 0;">
+                <span style="font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;color:#d7dce7;display:inline-block;">{{ title }}</span>
+              </td></tr>
+              {% if phone %}
+              <tr><td style="padding:0 0 2px 0;">
+                <a href="tel:{{ phone }}" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#ffffff;line-height:1.6;text-decoration:none;display:inline-block;">{{ phone }}</a>
+              </td></tr>
+              {% endif %}
+              {% if email %}
+              <tr><td style="padding:0 0 2px 0;">
+                <a href="mailto:{{ email }}" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#ffffff;line-height:1.6;text-decoration:none;display:inline-block;">{{ email }}</a>
+              </td></tr>
+              {% endif %}
+              {% if address %}
+              <tr><td style="padding:0 0 2px 0;">
+                <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#ffffff;line-height:1.6;display:inline-block;">{{ address[:60] }}</span>
+              </td></tr>
+              {% endif %}
+              <tr><td style="padding:0;line-height:0;font-size:0;position:relative;top:-2px;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0;">
+                  <tr>
+                    <td style="padding:0 7px 0 0;line-height:0;font-size:0;">
+                      <a href="{{ url_linkedin }}" target="_blank" style="display:block;text-decoration:none;line-height:0;font-size:0;">
+                        <img src="{{ img_linkedin }}" width="28" height="28" alt="LinkedIn" style="display:block;border:0;outline:none;text-decoration:none;width:28px;height:28px;">
+                      </a>
+                    </td>
+                    <td style="padding:0 7px 0 0;line-height:0;font-size:0;">
+                      <a href="{{ url_instagram }}" target="_blank" style="display:block;text-decoration:none;line-height:0;font-size:0;">
+                        <img src="{{ img_instagram }}" width="28" height="28" alt="Instagram" style="display:block;border:0;outline:none;text-decoration:none;width:28px;height:28px;">
+                      </a>
+                    </td>
+                    <td style="padding:0 7px 0 0;line-height:0;font-size:0;">
+                      <a href="{{ url_facebook }}" target="_blank" style="display:block;text-decoration:none;line-height:0;font-size:0;">
+                        <img src="{{ img_facebook }}" width="28" height="28" alt="Facebook" style="display:block;border:0;outline:none;text-decoration:none;width:28px;height:28px;">
+                      </a>
+                    </td>
+                    <td style="padding:0;line-height:0;font-size:0;">
+                      <a href="{{ url_youtube }}" target="_blank" style="display:block;text-decoration:none;line-height:0;font-size:0;">
+                        <img src="{{ img_youtube }}" width="28" height="28" alt="YouTube" style="display:block;border:0;outline:none;text-decoration:none;width:28px;height:28px;">
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td></tr>
+            </table>
+          </td>
+          <td width="14" style="width:14px;font-size:0;line-height:0;">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
