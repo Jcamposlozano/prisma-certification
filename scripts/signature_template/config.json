@@ -1,9 +1,10 @@
 {
   "html_file": "template.html",
+  "css_file": "styles.css",
   "required_fields": ["name"],
+  "background_field": "img_background",
   "assets": {
-    "img_background_left": "assets/background-left.png",
-    "img_background_right": "assets/background-right.png",
+    "img_background": "assets/Background.png",
     "img_linkedin": "assets/icon-linkedin.png",
     "img_instagram": "assets/icon-instagram.png",
     "img_facebook": "assets/icon-facebook.png",

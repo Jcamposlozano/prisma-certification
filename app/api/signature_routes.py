@@ -18,14 +18,15 @@ def _get_signature_service() -> SignatureService:
     if _signature_service is not None:
         return _signature_service
 
-    if not settings.S3_SIGNATURE_BUCKET_NAME:
+    bucket_name = settings.S3_SIGNATURE_BUCKET_NAME or settings.S3_BUCKET_NAME
+    if not bucket_name:
         raise HTTPException(
             status_code=500,
-            detail="S3_SIGNATURE_BUCKET_NAME no está configurado",
+            detail="S3_BUCKET_NAME (o S3_SIGNATURE_BUCKET_NAME) no está configurado",
         )
 
     _signature_repository = SignatureRepository(
-        bucket_name=settings.S3_SIGNATURE_BUCKET_NAME,
+        bucket_name=bucket_name,
         aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
         aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
         region_name=settings.AWS_DEFAULT_REGION,

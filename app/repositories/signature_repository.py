@@ -40,5 +40,8 @@ class SignatureRepository:
     def get_html(self, prefix: str, html_file: str) -> str:
         return self._read_text(f"{prefix}/{html_file}")
 
+    def get_css(self, prefix: str, css_file: str) -> str:
+        return self._read_text(f"{prefix}/{css_file}")
+
     def get_asset_bytes(self, prefix: str, asset_path: str) -> bytes:
         return self._read_bytes(f"{prefix}/{asset_path}")
