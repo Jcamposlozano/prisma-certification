@@ -19,16 +19,23 @@ import mimetypes
 import sys
 from pathlib import Path
 
-import boto3
+# Permite ejecutar el script directamente (poetry run python scripts/...)
+# sin que falle el import de app.* — añadimos la raíz del proyecto a sys.path.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from app.core.config import settings
+import boto3  # noqa: E402
+
+from app.core.config import settings  # noqa: E402
 
 LOCAL_ROOT = Path(__file__).parent / "signature_template"
 
 
 def upload() -> int:
-    if not settings.S3_SIGNATURE_BUCKET_NAME:
-        print("ERROR: S3_SIGNATURE_BUCKET_NAME no está configurado en .env")
+    bucket = settings.S3_SIGNATURE_BUCKET_NAME or settings.S3_BUCKET_NAME
+    if not bucket:
+        print("ERROR: S3_BUCKET_NAME (o S3_SIGNATURE_BUCKET_NAME) no está configurado en .env")
         return 1
 
     if not LOCAL_ROOT.is_dir():
@@ -43,7 +50,6 @@ def upload() -> int:
     )
 
     prefix = settings.SIGNATURE_TEMPLATE_PREFIX.strip("/")
-    bucket = settings.S3_SIGNATURE_BUCKET_NAME
 
     uploaded = 0
     for path in LOCAL_ROOT.rglob("*"):
