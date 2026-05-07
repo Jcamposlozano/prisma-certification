@@ -30,6 +30,8 @@ import boto3  # noqa: E402
 from app.core.config import settings  # noqa: E402
 
 LOCAL_ROOT = Path(__file__).parent / "signature_template"
+# Archivos que viven en la carpeta local pero NO deben subirse al bucket.
+SKIP_NAMES = {"README.md", ".DS_Store"}
 
 
 def upload() -> int:
@@ -53,7 +55,7 @@ def upload() -> int:
 
     uploaded = 0
     for path in LOCAL_ROOT.rglob("*"):
-        if not path.is_file():
+        if not path.is_file() or path.name in SKIP_NAMES:
             continue
         rel = path.relative_to(LOCAL_ROOT).as_posix()
         key = f"{prefix}/{rel}"

@@ -3,29 +3,29 @@ SHELL := /bin/bash
 .PHONY: install run test lint format docker-build docker-up docker-down docker-logs
 
 install:
-\tpoetry install
+	poetry install
 
 run:
-\tpoetry run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+	poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 test:
-\tpoetry run pytest
+	poetry run pytest
 
 lint:
-\tpoetry run ruff check .
+	poetry run ruff check .
 
 format:
-\tpoetry run ruff format .
-\tpoetry run ruff check . --fix
+	poetry run ruff format .
+	poetry run ruff check . --fix
 
 docker-build:
-\tdocker build -t certificate-service:latest .
+	docker build -t certificate-service:latest .
 
 docker-up:
-\tdocker compose up --build
+	docker compose up --build
 
 docker-down:
-\tdocker compose down -v
+	docker compose down -v
 
 docker-logs:
-\tdocker compose logs -f
+	docker compose logs -f
