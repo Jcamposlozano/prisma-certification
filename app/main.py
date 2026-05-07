@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import router
+from app.api.signature_routes import router as signature_router
 from app.core.config import settings
 
 app = FastAPI(
@@ -23,3 +24,4 @@ app.add_middleware(
 
 # 👇 Luego registras rutas
 app.include_router(router)
+app.include_router(signature_router)

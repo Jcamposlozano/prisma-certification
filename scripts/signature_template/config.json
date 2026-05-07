@@ -1,0 +1,19 @@
+{
+  "html_file": "template.html",
+  "css_file": "styles.css",
+  "required_fields": ["name"],
+  "background_field": "img_background",
+  "assets": {
+    "img_background": "assets/Background.png",
+    "img_linkedin": "assets/icon-linkedin.png",
+    "img_instagram": "assets/icon-instagram.png",
+    "img_facebook": "assets/icon-facebook.png",
+    "img_youtube": "assets/icon-youtube.png"
+  },
+  "defaults": {
+    "url_linkedin": "https://www.linkedin.com/school/westfield-business-school/",
+    "url_instagram": "https://www.instagram.com/westfieldbs/",
+    "url_facebook": "https://www.facebook.com/westfieldbs/",
+    "url_youtube": "https://youtube.com/@westfieldbusinessschool?si=MnPTH-I0LWD_Imwz"
+  }
+}

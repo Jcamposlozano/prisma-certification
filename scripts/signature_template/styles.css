@@ -1,0 +1,37 @@
+/* Estilos auxiliares para la firma. La mayoría del estilo va inline en
+   las celdas (Gmail descarta <style>), pero algunos clientes lo respetan
+   y usamos esto como red de seguridad. */
+
+.westfield-sig {
+  width: 560px;
+  border-collapse: collapse;
+  background-color: #010d26;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.westfield-sig a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.westfield-sig .sig-name {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.westfield-sig .sig-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: #d7dce7;
+}
+
+.westfield-sig .sig-row {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #ffffff;
+  line-height: 1.6;
+}
